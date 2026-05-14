@@ -28,18 +28,17 @@ pipeline {
         success {
             echo '✅ Deployment Successful!'
             emailext(
+                to: '$DEFAULT_RECIPIENTS',
                 subject: "✅ Deployment Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """\
-The deployment was successful!
-
-Job: ${env.JOB_NAME}
-Build Number: ${env.BUILD_NUMBER}
-Build URL: ${env.BUILD_URL}
-Branch: ${env.GIT_BRANCH}
-Deployed at: ${new Date()}
-
-Next steps: Monitor application health and logs.
-""",
+                    <p>The deployment was successful!</p>
+                    <p><strong>Job:</strong> ${env.JOB_NAME}</p>
+                    <p><strong>Build Number:</strong> ${env.BUILD_NUMBER}</p>
+                    <p><strong>Build URL:</strong> <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>
+                    <p><strong>Branch:</strong> ${env.GIT_BRANCH}</p>
+                    <p><strong>Deployed at:</strong> ${new Date()}</p>
+                    <p>Next steps: Monitor application health and logs.</p>
+                """,
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 mimeType: 'text/html'
             )
@@ -47,17 +46,16 @@ Next steps: Monitor application health and logs.
         failure {
             echo '❌ Deployment Failed!'
             emailext(
+                to: '$DEFAULT_RECIPIENTS',
                 subject: "❌ Deployment Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """\
-The deployment has failed.
-
-Job: ${env.JOB_NAME}
-Build Number: ${env.BUILD_NUMBER}
-Build URL: ${env.BUILD_URL}
-Check the console output for details: ${env.BUILD_URL}console
-
-Take immediate action to restore service.
-""",
+                    <p>The deployment has failed.</p>
+                    <p><strong>Job:</strong> ${env.JOB_NAME}</p>
+                    <p><strong>Build Number:</strong> ${env.BUILD_NUMBER}</p>
+                    <p><strong>Build URL:</strong> <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>
+                    <p>Check the console output for details: <a href='${env.BUILD_URL}console'>Console Log</a></p>
+                    <p>Take immediate action to restore service.</p>
+                """,
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                 mimeType: 'text/html'
             )
@@ -66,4 +64,4 @@ Take immediate action to restore service.
             cleanWs() // Clean workspace after build
         }
     }
-}   
+}
