@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head><title>Message Board</title></head>
+<head>
+    <title>Message Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 <body>
     <h1>Submit a Message</h1>
     <form method="POST">
@@ -11,7 +14,7 @@
     <h2>Messages:</h2>
     <ul>
         {% for msg in messages %}
-            <li>{{ msg }}</li>
+            <li class="message">{{ msg }}</li>
         {% endfor %}
     </ul>
 </body>
