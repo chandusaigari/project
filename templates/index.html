@@ -1,105 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message App</title>
 
     <style>
-        body {
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            margin: 0;
-            padding: 40px;
-            color: white;
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background: linear-gradient(135deg,#1e3c72,#2a5298);
+            padding:20px;
         }
 
-        .container {
-            max-width: 700px;
-            margin: auto;
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 15px;
+        .container{
+            width:100%;
+            max-width:700px;
+
+            background: rgba(255,255,255,0.12);
             backdrop-filter: blur(10px);
+
+            border-radius:20px;
+
+            padding:30px;
+
+            box-shadow:0 10px 30px rgba(0,0,0,0.3);
         }
 
-        h1 {
-            text-align: center;
+        h1{
+            color:white;
+            text-align:center;
+            margin-bottom:25px;
         }
 
-        form {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+        form{
+            display:flex;
+            gap:10px;
+            margin-bottom:25px;
         }
 
-        input {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
+        input{
+            flex:1;
+            padding:14px;
+
+            border:none;
+            border-radius:10px;
+
+            font-size:16px;
+            outline:none;
         }
 
-        button {
-            padding: 12px 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background: #00c6ff;
-            color: white;
-            font-weight: bold;
+        button{
+            padding:14px 20px;
+
+            border:none;
+            border-radius:10px;
+
+            background:#00c6ff;
+            color:white;
+
+            font-size:16px;
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
         }
 
-        .message {
-            background: rgba(255,255,255,0.15);
-            padding: 15px;
-            margin-top: 10px;
-            border-radius: 10px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        button:hover{
+            transform:scale(1.05);
+            background:#0072ff;
         }
 
-        .delete-btn {
-            background: red;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            color: white;
+        .message{
+            background:rgba(255,255,255,0.18);
+
+            padding:15px;
+            margin-top:12px;
+
+            border-radius:12px;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            color:white;
+
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
         }
 
-        .delete-btn:hover {
-            opacity: 0.8;
+        .delete-btn{
+            background:red;
+            color:white;
+
+            text-decoration:none;
+
+            padding:8px 12px;
+            border-radius:8px;
+
+            transition:0.3s;
         }
+
+        .delete-btn:hover{
+            opacity:0.8;
+        }
+
     </style>
 
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>🚀 Message App</h1>
+        <h1>🚀 Flask Message App</h1>
 
-    <form method="POST">
-        <input type="text" name="message" placeholder="Enter message" required>
-        <button type="submit">Add</button>
-    </form>
+        <form method="POST">
 
-    {% for id, message in messages %}
-        <div class="message">
-
-            <span>{{ message }}</span>
-
-            <a
-                class="delete-btn"
-                href="/delete/{{ id }}"
+            <input
+                type="text"
+                name="message"
+                placeholder="Enter your message..."
+                required
             >
-                Delete
-            </a>
 
-        </div>
-    {% endfor %}
+            <button type="submit">
+                Add
+            </button>
 
-</div>
+        </form>
+
+        {% for id, message in messages %}
+
+            <div class="message">
+
+                <span>{{ message }}</span>
+
+                <a
+                    href="/delete/{{ id }}"
+                    class="delete-btn"
+                >
+                    Delete
+                </a>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
 
 </body>
 </html>
