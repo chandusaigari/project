@@ -6,12 +6,20 @@ import time
 app = Flask(__name__)
 
 def get_db_connection():
-    return mysql.connector.connect(
-        host=os.environ.get("DB_HOST"),
-        user=os.environ.get("DB_USER"),
-        password=os.environ.get("DB_PASSWORD"),
-        database=os.environ.get("DB_NAME")
-    )
+    while True:
+        try:
+            conn = mysql.connector.connect(
+                host=os.environ.get("DB_HOST"),
+                user=os.environ.get("DB_USER"),
+                password=os.environ.get("DB_PASSWORD"),
+                database=os.environ.get("DB_NAME"),
+                port=3306
+            )
+            print("✅ Connected to MySQL!")
+            return conn
+        except Exception as e:
+            print(f"❌ DB Connection failed: {e}, retrying in 5s...")
+            time.sleep(5)   
 
 @app.route("/")
 def home():
