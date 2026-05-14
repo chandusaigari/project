@@ -22,17 +22,29 @@ def get_db_connection():
             time.sleep(5)   
 
 @app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        cursor.execute("SELECT 'Connected to MySQL DB!'")
-        result = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        return result[0]
-    except Exception as e:
-        return f"Database connection failed: {e}"
+    if request.method == "POST":
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            # Insert example data
+            cursor.execute("INSERT INTO test_table (message) VALUES (%s)", [request.form["message"]])
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return "Data inserted successfully!"
+        except Exception as e:
+            return f"Insert failed: {e}"
+
+    # Render a simple form
+    return '''
+    <h1>Connected to MySQL DB!</h1>
+    <form method="POST">
+        <input type="text" name="message" placeholder="Enter something" required />
+        <button type="submit">Insert Data</button>
+    </form>
+    '''   
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
