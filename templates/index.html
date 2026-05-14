@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head><title>Flask MySQL App</title></head>
+<html lang="en">
+<head>
+    <title>Flask MySQL App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-  <h1>Insert Message</h1>
-  <form method="POST">
-    <input type="text" name="message" required placeholder="Enter message" />
-    <button type="submit">Submit</button>
-  </form>
-
-  <h2>Stored Messages:</h2>
-  <ul>
-    {% for msg in messages %}
-      <li>{{ msg }}</li>
-    {% endfor %}
-  </ul>
+    <div class="container">
+        <h1>Insert Message</h1>
+        <form method="POST">
+            <input type="text" name="message" required placeholder="Enter message" />
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Stored Messages:</h2>
+        <ul>
+            {% for msg in messages %}
+            <li>{{ msg }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>   
