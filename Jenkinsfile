@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        IMAGE_NAME = "my-app:${BUILD_NUMBER}"  // Defines the image name and tag
-    }
     stages {
         stage('Checkout') {
             steps {
@@ -12,7 +9,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                sh 'docker build -t flask-app:latest .'
             }
         }
         stage('Deploy with Docker Compose') {
@@ -29,10 +26,10 @@ pipeline {
     }
     post {
         success {
-            echo 'Deployment Successful!'
+            echo '✅ Deployment Successful!'
         }
         failure {
-            echo 'Deployment Failed!'
+            echo '❌ Deployment Failed!'
         }
     }
 }   
