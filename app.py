@@ -6,12 +6,29 @@ app = Flask(__name__)
 
 def get_db_connection():
     return mysql.connector.connect(
-      host=os.getenv("DB_HOST", "db")
-user=os.getenv("DB_USER", "user")        # ← use 'user'
-password=os.getenv("DB_PASSWORD", "123") # ← use '123'
-database=os.getenv("DB_NAME", "db")      # ← use 'db,
+        host=os.getenv("DB_HOST", "db"),
+        user=os.getenv("DB_USER", "user"),
+        password=os.getenv("DB_PASSWORD", "123"),
+        database=os.getenv("DB_NAME", "db"),
         port=3306
     )
+
+def init_db():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS messages (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            message TEXT
+        )
+    """)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+# Initialize database at startup
+with app.app_context():
+    init_db()
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -20,7 +37,6 @@ def index():
         try:
             conn = get_db_connection()
             cursor = conn.cursor()
-            cursor.execute("CREATE TABLE IF NOT EXISTS messages (id INT AUTO_INCREMENT PRIMARY KEY, message TEXT)")
             cursor.execute("INSERT INTO messages (message) VALUES (%s)", (message,))
             conn.commit()
             cursor.close()
