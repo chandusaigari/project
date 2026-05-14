@@ -20,12 +20,9 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: testdb
     volumes:
-      - db-data:/var/lib/mysql
+      - /var/lib/vol$:/var/lib/mysql  # Bind mount
     networks:
       - app-network
-
-volumes:
-  db-data:
 
 networks:
   app-network:
