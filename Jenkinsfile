@@ -4,8 +4,9 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',  // Changed from 'master' to 'main'
-                    url: 'https://github.com/chandusaigari/project',
-                }
+                    url: 'https://github.com/chandusaigari/project'
+            }
+                
         }
 
         stage('Build Docker Image') {
