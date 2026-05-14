@@ -3,14 +3,16 @@ services:
     image: mysql:8.0
     container_name: project2-db-1
     environment:
-      MYSQL_ROOT_PASSWORD: your_root_password
-      MYSQL_DATABASE: your_db
-      MYSQL_USER: your_user
-      MYSQL_PASSWORD: your_password
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
 
   web:
     build: .
@@ -18,10 +20,15 @@ services:
     ports:
       - "5000:5000"
     environment:
-      DB_HOST: db  # ← This must match the service name
+      DB_HOST: db
     depends_on:
-      - db   
+      - db
+    networks:
+      - app-network
 
 networks:
   app-network:
-    driver: bridge   
+    driver: bridge
+
+volumes:
+  mysql-data:   
