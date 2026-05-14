@@ -26,7 +26,6 @@ def init_db():
     cursor.close()
     conn.close()
 
-# Initialize database at startup
 with app.app_context():
     init_db()
 
@@ -44,7 +43,6 @@ def index():
         except Exception as e:
             return f"Error: {e}"
 
-    # Fetch all messages
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
