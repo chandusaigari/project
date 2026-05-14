@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/two-tier-app.git'
+                git 'https://github.com/chandusaigari/project'
             }
         }
 
