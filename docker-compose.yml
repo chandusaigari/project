@@ -39,3 +39,5 @@ volumes:
 networks:
   app-network:
     driver: bridge
+environment:
+  FLASK_DEBUG: 1       
