@@ -1,0 +1,68 @@
+version: "3.9"
+
+# ── named volumes ─────────────────────────────────────────────────────────────
+volumes:
+  pg_data:
+    driver: local
+
+# ── networks (containers isolated by layer) ───────────────────────────────────
+networks:
+  frontend_net:   # frontend  <-> backend
+    driver: bridge
+  backend_net:    # backend   <-> database
+    driver: bridge
+
+# ── services ──────────────────────────────────────────────────────────────────
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine          # alpine = smallest official image
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       appdb
+      POSTGRES_USER:     appuser
+      POSTGRES_PASSWORD: apppass
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - backend_net                    # ONLY reachable by backend
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U appuser -d appdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Flask Backend ────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DB_HOST:     db
+      DB_NAME:     appdb
+      DB_USER:     appuser
+      DB_PASSWORD: apppass
+      DB_PORT:     "5432"
+    networks:
+      - frontend_net   # accepts requests from frontend
+      - backend_net    # talks to db
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ── Nginx Frontend ───────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - frontend_net   # only talks to backend, NOT to db
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
