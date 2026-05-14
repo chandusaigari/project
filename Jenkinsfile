@@ -28,7 +28,7 @@ pipeline {
         success {
             echo '✅ Deployment Successful!'
             emailext(
-                to: '$DEFAULT_RECIPIENTS',
+                to: 'chandusaigari6@gmail.com',
                 subject: "✅ Deployment Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """\
                     <p>The deployment was successful!</p>
@@ -46,7 +46,7 @@ pipeline {
         failure {
             echo '❌ Deployment Failed!'
             emailext(
-                to: '$DEFAULT_RECIPIENTS',
+                to: 'chandusaigari6@gmail.com',
                 subject: "❌ Deployment Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """\
                     <p>The deployment has failed.</p>
