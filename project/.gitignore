@@ -1,8 +1,0 @@
-project/
-# Ignore system folders
-/System Volume Information/
-/$RECYCLE.BIN/
-
-# Optional: Ignore other common system files
-Thumbs.db
-Desktop.ini   
