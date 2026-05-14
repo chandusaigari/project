@@ -1,15 +1,11 @@
 pipeline {
     agent any
-
-    environment {
-        IMAGE_NAME = "flask-two-tier-app"
-    }
-
     stages {
-
         stage('Checkout') {
             steps {
-                git 'https://github.com/chandusaigari/project'
+                git branch: 'main',  // Changed from 'master' to 'main'
+                    url: 'https://github.com/chandusaigari/project',
+                     
             }
         }
 
