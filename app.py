@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import mysql.connector
 import os
 import time
@@ -15,7 +15,7 @@ def get_db_connection():
         port=3306
     )
 
-# Initialize Database with Retry Logic
+# Initialize Database
 def init_db():
     for i in range(10):
         try:
@@ -33,25 +33,23 @@ def init_db():
             cursor.close()
             conn.close()
 
-            print("✅ Database initialized successfully")
+            print("✅ Database initialized")
             return
 
         except Exception as e:
-            print(f"⏳ Waiting for MySQL... Attempt {i+1}/10")
-            print("Error:", e)
+            print(f"⏳ Waiting for MySQL... {e}")
             time.sleep(5)
 
-    print("❌ Could not connect to MySQL after retries")
+    print("❌ Could not connect to MySQL")
 
-# Run DB Initialization
 with app.app_context():
     init_db()
 
-# Home Route
+# Home Page
 @app.route("/", methods=["GET", "POST"])
 def index():
 
-    # Insert Message
+    # Add Message
     if request.method == "POST":
         message = request.form["message"]
 
@@ -70,25 +68,48 @@ def index():
             conn.close()
 
         except Exception as e:
-            return f"Database Insert Error: {e}"
+            return f"Insert Error: {e}"
 
     # Fetch Messages
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        cursor.execute("SELECT message FROM messages")
+        cursor.execute("SELECT id, message FROM messages")
 
-        messages = [row[0] for row in cursor.fetchall()]
+        messages = cursor.fetchall()
 
         cursor.close()
         conn.close()
 
     except Exception as e:
-        messages = [f"Database Fetch Error: {e}"]
+        messages = [(0, f"Fetch Error: {e}")]
 
     return render_template("index.html", messages=messages)
 
-# Run Flask App
+# Delete Message
+@app.route("/delete/<int:id>")
+def delete_message(id):
+
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "DELETE FROM messages WHERE id=%s",
+            (id,)
+        )
+
+        conn.commit()
+
+        cursor.close()
+        conn.close()
+
+    except Exception as e:
+        return f"Delete Error: {e}"
+
+    return redirect("/")
+
+# Run App
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
