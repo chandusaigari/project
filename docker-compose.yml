@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-   image: mysql:8.0    # Use official image, remove custom tag
+    image: sqldb:8.0 # Use official image, remove custom tag
     container_name: project2-db-1
     environment:
       MYSQL_ROOT_PASSWORD: '123'
@@ -34,4 +34,4 @@ networks:
     driver: bridge
 
 volumes:
-  mysql-data:   
+  mysql-data:
