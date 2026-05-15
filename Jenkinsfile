@@ -5,6 +5,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/chandusaigari/project'
+                    credentialsId:'git'
             }
         }
         stage('Build Docker Image') {
