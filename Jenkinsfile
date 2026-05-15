@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t flask-app:latest .'
+                sh 'docker build -t chandu0303/web:v1  .'
             }
         }
         stage('Deploy with Docker Compose') {
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Verify Running Containers') {
             steps {
-                sh 'docker ps'
+                sh 'docker ps -a'
             }
         }
     }
