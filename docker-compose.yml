@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    image: chandu0303/db:v1  
+    image: mysql:8.0 # Use official image, remove custom tag
     container_name: project2-db-1
     environment:
       MYSQL_ROOT_PASSWORD: '123'
@@ -18,7 +18,7 @@ services:
 
   web:
     build: .
-    image: chandu0303/web:v1  
+    image: chandu0303/web:v1 # Only tag your custom web app
     container_name: project-web-1
     ports:
       - "5000:5000"
