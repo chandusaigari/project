@@ -12,7 +12,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /usr/local/kind1:/var/lib/mysql
+      - /usr/local/bin/kind1:/var/lib/mysql
     networks:
       - app-network
 
@@ -34,4 +34,4 @@ networks:
     driver: bridge
 
 volumes:
-  /usr/local/kind1:
+  /usr/local/bin/kind1:
