@@ -1,6 +1,6 @@
-# =========================
+ 
 # Stage 1 - Builder Stage
-# =========================
+ 
 FROM python:3.9-slim AS builder
 
 # Set working directory
@@ -12,9 +12,9 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install --no-cache-dir --user -r requirements.txt
 
-# =========================
+ 
 # Stage 2 - Production Stage
-# =========================
+ 
 FROM python:3.9-slim
 
 # Set working directory
