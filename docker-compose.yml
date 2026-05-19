@@ -1,38 +1,47 @@
-version: '3.8'
+version: '3.8'   # Docker Compose version
 
 services:
-  db:
-    image: mysql:8.0   # Use official image, remove custom tag
-    container_name: project2-db-1
+  db:   # MySQL database service
+    image: mysql:8.0   # Official MySQL image from Docker Hub
+    container_name: project2-db-1   # Custom name for DB container
+
     environment:
-      MYSQL_ROOT_PASSWORD: '123'
-      MYSQL_DATABASE: db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: '123'
+      MYSQL_ROOT_PASSWORD: '123'   # Root password for MySQL
+      MYSQL_DATABASE: db           # Database created automatically
+      MYSQL_USER: user             # New MySQL user
+      MYSQL_PASSWORD: '123'        # Password for new user
+
     ports:
-      - "3306:3306"
+      - "3306:3306"   # Host port : Container port
+
     volumes:
-       - mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql   # Store DB data permanently
 
     networks:
-      - app-network
+      - app-network   # Connect DB to custom network
 
-  web:
-    build: .
-    image: chandu0303/web:v1 # Only tag your custom web app
-    container_name: project-web-1
+  web:   # Flask/Python web application service
+    build: .   # Build image using Dockerfile in current folder
+
+    image: chandu0303/web:v1   # Custom image name and tag
+
+    container_name: project-web-1   # Custom container name
+
     ports:
-      - "5000:5000"
+      - "5000:5000"   # Access app on localhost:5000
+
     environment:
-      DB_HOST: db
+      DB_HOST: db   # DB hostname = service name
+
     depends_on:
-      - db
+      - db   # Start DB first before web app
+
     networks:
-      - app-network
+      - app-network   # Connect app to same network
 
 networks:
   app-network:
-    driver: bridge
+    driver: bridge   # Default Docker bridge network
 
 volumes:
- mysql-data:
+  mysql-data:   # Named volume for persistent MySQL storage
