@@ -5,7 +5,7 @@ Frontend + Backend + Database Architecture Integrated with CI/CD Automation
 </h3>
 
 <p align="center">
-  <img src="images/banner.png" width="100%">
+  <img src="images/architecture.png" width="100%">
 </p>
 
 ---
