@@ -4,7 +4,9 @@
 Frontend + Backend + Database Architecture Integrated with CI/CD Automation
 </h3>
 
-🔗 **Documentation**: [View Project Docs] https://1drv.ms/w/c/b04ed05d887aa81f/IQBrf_kQBqCXSJV8Vp_bGct2AfyONuDMTKTpPShF_pbdyLk?e=x62UhV  
+🔗 **Documentation**: 
+[View Project Docs] 
+(https://1drv.ms/w/c/b04ed05d887aa81f/IQBrf_kQBqCXSJV8Vp_bGct2AfyONuDMTKTpPShF_pbdyLk?e=KTHCbo)
 
 <p align="center">
   <img src="images/architecture.png" width="100%">
