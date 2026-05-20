@@ -287,9 +287,9 @@ BUILD NOW
 
 ---
 
-# 📊 Blue Ocean Visualization
+# 📊 Stage view Visualization
 
-Install the Blue Ocean plugin to visualize pipeline stages.
+Install the Stage view plugin to visualize pipeline stages.
 
 <p align="center">
   <img src="images/2.5.png" width="800">
