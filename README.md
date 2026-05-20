@@ -4,7 +4,7 @@
 Frontend + Backend + Database Architecture Integrated with CI/CD Automation
 </h3>
 
-<p align="left">🔗 **Documentation**: [View Project Docs](https://github.com/chandusaigari/project/blob/main/project.pdf)</p>p>   
+<p align="left">🔗 **Documentation**: [View Project Docs](https://github.com/chandusaigari/project/blob/main/project.pdf)</p>  
 <p align="center">
   <img src="images/architecture.png" width="100%">
 </p>
