@@ -1,10 +1,11 @@
 <h1 align="center">🚀 3-Tier Full Stack DevOps Application</h1>
-
 <h3 align="center">
 Frontend + Backend + Database Architecture Integrated with CI/CD Automation
 </h3>
 
-<p align="left">🔗 **Documentation**: [View Project Docs](https://github.com/chandusaigari/project/blob/main/project.pdf)</p>  
+<p style="text-align: center;">
+🔗 <strong>Documentation</strong>: <a href="https://github.com/chandusaigari/project/blob/main/project.pdf">View Project Docs</a>
+</p>   
 <p align="center">
   <img src="images/architecture.png" width="100%">
 </p>
