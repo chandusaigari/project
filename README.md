@@ -218,10 +218,7 @@ http://localhost:8080
 
 Login using Jenkins username and password.
 
-<p align="center">
-  <img src="images/jenkins-dashboard.png" width="800">
-</p>
-<p align="center">
+ <p align="center">
   <img src="images/1.2.png" width="800">
 </p>
 <p align="center">
