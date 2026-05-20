@@ -138,14 +138,16 @@ This ensured:
 ```text
 project/
 │
-├── frontend/
-├── backend/
-├── database/
-├── docker/
-├── jenkins/
-├── screenshots/
-├── images/
-└── README.md
+├── /images
+├── /static
+├── /templates
+├── Jenkinsfile 
+├── Readme.md 
+├── app.py 
+├── docker-compose.yml  
+├── dockerfile
+├── documentation 
+└── requirements.txt
 ```
 
 ---
