@@ -55,7 +55,6 @@ The application was integrated with DevOps automation tools to simulate a real-w
 ## 🎨 Frontend Development
 
 - Built responsive user interfaces using HTML and CSS
-- Implemented interactive UI behavior using JavaScript
 - Created a clean and user-friendly application layout
 
 ---
