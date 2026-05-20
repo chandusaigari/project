@@ -206,7 +206,10 @@ http://localhost:8080
 ```
 
 <p align="center">
-  <img src="images/jenkins-start.png" width="800">
+  <img src="images/1.0.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.1.png" width="800">
 </p>
 
 ---
