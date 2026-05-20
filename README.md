@@ -221,6 +221,30 @@ Login using Jenkins username and password.
 <p align="center">
   <img src="images/jenkins-dashboard.png" width="800">
 </p>
+<p align="center">
+  <img src="images/1.2.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.3.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.4.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.5.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.6.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.7.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.8.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.9.png" width="800">
+</p>
 
 ---
 
