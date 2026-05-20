@@ -3,7 +3,7 @@
 Frontend + Backend + Database Architecture Integrated with CI/CD Automation
 </h3>
 
-<p style="text-align: center;">
+<p style="align: center;">
 🔗 <strong>Documentation</strong>: <a href="https://github.com/chandusaigari/project/blob/main/project.pdf">View Project Docs</a>
 </p>   
 <p align="center">
