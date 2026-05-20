@@ -224,24 +224,8 @@ Login using Jenkins username and password.
 <p align="center">
   <img src="images/1.3.png" width="800">
 </p>
-<p align="center">
-  <img src="images/1.4.png" width="800">
-</p>
-<p align="center">
-  <img src="images/1.5.png" width="800">
-</p>
-<p align="center">
-  <img src="images/1.6.png" width="800">
-</p>
-<p align="center">
-  <img src="images/1.7.png" width="800">
-</p>
-<p align="center">
-  <img src="images/1.8.png" width="800">
-</p>
-<p align="center">
-  <img src="images/1.9.png" width="800">
-</p>
+ 
+ 
 
 ---
 
@@ -250,10 +234,12 @@ Login using Jenkins username and password.
 - Click "New Item"
 - Enter Job Name
 - Select "Pipeline"
-
-<p align="center">
-  <img src="images/create-job.png" width="800">
+  <p align="center">
+  <img src="images/1.4.png" width="800">
 </p>
+<p align="center">
+  <img src="images/1.5.png" width="800">
+ 
 
 ---
 
@@ -264,10 +250,21 @@ Login using Jenkins username and password.
   - SCM as Git
 - Add Repository URL
 - Choose main/master branch
+</p>
+<p align="center">
+  <img src="images/1.6.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.7.png" width="800">
+</p>
+<p align="center">
+  <img src="images/1.8.png" width="800">
+</p>
 
 <p align="center">
-  <img src="images/github-config.png" width="800">
+  <img src="images/1.9.png" width="800">
 </p>
+ 
 
 ---
 
@@ -280,7 +277,10 @@ BUILD NOW
 ```
 
 <p align="center">
-  <img src="images/build-now.png" width="800">
+  <img src="images/2.1.png" width="800">
+</p>
+<p align="center">
+  <img src="images/2.2.png" width="800">
 </p>
 
 ---
@@ -290,7 +290,7 @@ BUILD NOW
 Install the Blue Ocean plugin to visualize pipeline stages.
 
 <p align="center">
-  <img src="images/blueocean.png" width="800">
+  <img src="images/2.5.png" width="800">
 </p>
 
 ---
@@ -300,7 +300,7 @@ Install the Blue Ocean plugin to visualize pipeline stages.
 Console output helps identify build failures and errors.
 
 <p align="center">
-  <img src="images/console-output.png" width="800">
+  <img src="images/2.4.png" width="800">
 </p>
 
 ---
@@ -326,9 +326,38 @@ docker ps
 ```
 
 <p align="center">
-  <img src="images/docker-ps.png" width="800">
+  <img src="images/2.6.png" width="800">
 </p>
 
+<p align="center">
+  <img src="images/2.7.png" width="800">
+</p>
+
+---
+#  📧 Email Notification
+
+Open Email:
+
+```text
+you will recieve a message upon success or Failure
+```
+
+<p align="center">
+  <img src="images/3.2.png" width="800">
+</p>
+ 
+---
+#  🐳 Docker Hub
+
+Open DckerHub:
+
+```text
+you will recieve a image pushed to your github account
+```
+
+<p align="center">
+  <img src="images/3.1.png" width="800">
+</p>
 ---
 
 # 🌐 Access Application
@@ -340,10 +369,13 @@ http://localhost:5000
 ```
 
 <p align="center">
-  <img src="images/application.png" width="800">
+  <img src="images/2.8.png" width="800">
 </p>
-
+<p align="center">
+  <img src="images/2.9.png" width="800">
+</p>
 ---
+ 
 
 # 📈 Future Scope
 
