@@ -1,266 +1,387 @@
-**Project Overview**
+<h1 align="center">🚀 3-Tier Full Stack DevOps Application</h1>
 
-Developed a full-stack message storage application using HTML, CSS,
-JavaScript, Python Flask, and MySQL. The project follows a 3-tier
-architecture with clear separation between frontend, backend, and
-database layers.
+<h3 align="center">
+Frontend + Backend + Database Architecture Integrated with CI/CD Automation
+</h3>
 
-**Development (using AI)**
+<p align="center">
+  <img src="images/banner.png" width="100%">
+</p>
 
-Built an interactive frontend using HTML, CSS to handle user
-interactions and UI design.\
-Implemented backend logic using Python Flask to manage APIs, requests,
-and business logic.\
-Used MySQL as the database to store and manage application data
-efficiently.
+---
 
-**Version Control**
+# 📌 Project Overview
 
-Managed the entire source code using Git and GitHub.\
-Tracked changes, maintained repository history, and enabled
-collaborative development practices**.**
+Developed a complete full-stack message storage application using HTML, CSS, JavaScript, Python Flask, and MySQL.
 
-**CI/CD Automation**
+The project follows a modern 3-tier architecture with clear separation between:
 
-Integrated Jenkins to build a CI/CD pipeline for automated workflow.\
-Automated code build, testing, and deployment whenever changes were
-pushed to GitHub.
+- Frontend Layer
+- Backend Layer
+- Database Layer
 
-**Containerization**
+The application was integrated with DevOps automation tools to simulate a real-world production deployment workflow.
 
-Used Docker and Docker Compose to containerize the application.\
-Managed frontend, backend, and database as separate services for
-consistent deployment across environments.
+---
 
-**DevOps Implementation**
+# 🏗️ Architecture
 
-Automated the complete deployment process to reduce manual effort and
-improve efficiency.\
-Ensured faster delivery and reliable application deployment using DevOps
-best practices**.**
+<p align="center">
+  <img src="images/architecture.png" width="100%">
+</p>
 
-**Conclusion**
+---
 
-**This project helped in understanding real-world full-stack development
-along with DevOps tools and automation. It improved practical knowledge
-of CI/CD pipelines, containerization, and production-level deployment
-workflows.**
+# 🚀 Technologies Used
 
-**Top of Form**
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=git,github,docker,jenkins,python,mysql,html,css,linux" />
+</p>
 
-**Bottom of FormA 3-Tier Full Stack Application with frontend, backend,
-and database architecture integrated using DevOps CI/CD automation.\**
+| Technology | Purpose |
+|------------|----------|
+| GitHub | Version Control |
+| Jenkins | CI/CD Automation |
+| Docker | Containerization |
+| Python Flask | Backend Development |
+| HTML & CSS | Frontend Development |
+| MySQL | Database |
+| Linux | Deployment Environment |
 
-**[Used technologies:]{.underline}**
+---
 
-**1.Github**
+# 💻 Development Process
 
-**2.Jenkins(CICD)**
+## 🎨 Frontend Development
 
-**3.Docker**
+- Built responsive user interfaces using HTML and CSS
+- Implemented interactive UI behavior using JavaScript
+- Created a clean and user-friendly application layout
 
-**4.Python-flask(Backend)**
+---
 
-**5.HTML and CSS(Frontend)**
+## ⚙️ Backend Development
 
-**6.Mysql(Database)**
+- Developed backend APIs using Python Flask
+- Managed application logic and request handling
+- Connected frontend with database operations
 
-**First, clone the project repository from
-https://github.com/chandusaigari/project and open it in VS Code.**
+---
 
-**After making changes, push the code to your GitHub repository using
-the following**
+## 🗄️ Database Integration
 
-**Git commands:**
+- Used MySQL for storing application data
+- Implemented database connectivity with Flask
+- Managed records efficiently using SQL queries
 
-**git init**
+---
 
-**git clone https://github.com/chandusaigari/project.git**
+# 🔄 Version Control
 
-**git branch -M main**
+- Managed the complete source code using Git and GitHub
+- Maintained repository history and tracked changes
+- Followed collaborative development workflow practices
 
-**git status**
+---
 
-**git remote add origin https://github.com/your_username/project**
+# ⚡ CI/CD Automation
 
-**git add .**
+Integrated Jenkins to automate the complete software delivery process.
 
-**git commit -m \"code committed\"**
+## Jenkins Pipeline Workflow
 
-**git push origin main**
+```text
+Developer Push
+      ↓
+GitHub Repository
+      ↓
+Jenkins Pipeline Trigger
+      ↓
+Docker Image Build
+      ↓
+Container Deployment
+      ↓
+Application Running
+```
 
-**Now the code will be available in your GitHub repository.**
+---
 
-**If your repository already contains files, use \`git pull origin
-main\` before pushing the code, because the files in github may not
-contain in your local vscode folder.**
+# 🐳 Containerization
 
-**Make sure you downloaded Jenkins and docker for this project without
-those , this project would not happen .**
+Used Docker and Docker Compose to containerize the entire application.
 
-**what to do next after pushing to github?**
+## Services
 
-**After installing successfully Jenkins and docker do these below
-steps,**
+- Frontend Container
+- Backend Container
+- MySQL Database Container
 
-**Open any distro of linux like Ubuntu latest version.**
+This ensured:
+- Consistent deployment
+- Environment portability
+- Simplified application management
 
-**Type the command for starting Jenkins as shown in below picture**
+---
 
-**After this your Jenkins will start and you can access Jenkins from
-browser with**
+# ⚙️ DevOps Implementation
 
-**localhost://8080.**
+- Automated deployment workflow
+- Reduced manual operational tasks
+- Improved deployment speed and reliability
+- Simulated real-world DevOps practices
 
-![](media/image1.png){width="5.493827646544182in"
-height="3.088752187226597in"}
+---
 
-**You need to sign in with your Jenkins username and password**
+# 📂 Project Structure
 
-**After sign in you will get the Jenkins dashboard like this below
-one.**
+```text
+project/
+│
+├── frontend/
+├── backend/
+├── database/
+├── docker/
+├── jenkins/
+├── screenshots/
+├── images/
+└── README.md
+```
 
-![](media/image2.png){width="7.288288495188102in"
-height="2.2700371828521435in"}
+---
 
-**Build your First Job by clicking the above mentioned button**
+# 📥 Clone Repository
 
-**The Outcome will be :**
+```bash
+git clone https://github.com/chandusaigari/project.git
+```
 
-![](media/image3.png){width="7.5in" height="4.153603455818023in"}
+---
 
-**Make sure that your repository name & Job name should be same , select
-the pipeline**
+# 🔧 Git Commands
 
-**After saving ,you will be redirect to configure page then you need to
-choose the pipeline script from scm .**
+```bash
+git init
 
-![](media/image4.png){width="6.098766404199475in"
-height="3.4288615485564304in"}
+git clone https://github.com/chandusaigari/project.git
 
-**Now select the scm- source code management as Git**
+git branch -M main
 
-![](media/image5.png){width="6.728395669291339in"
-height="3.7828543307086613in"}
+git status
 
-**Now add the URL of your project in the Repository URL**
+git remote add origin https://github.com/your_username/project
 
-![](media/image6.png){width="7.5in" height="4.215277777777778in"}
+git add .
 
-**If your project repo is not private no need to add credentials if it
-is private make sure you need to add github credentials.**
+git commit -m "code committed"
 
-![](media/image7.png){width="4.3209886264216975in"
-height="2.429355861767279in"}
+git push origin main
+```
 
-**Select the branch of your repo based on your project either it is main
-or master branch.**
+If your repository already contains files:
 
-**After applying and save , you can build the Job by pressing the
-button**
+```bash
+git pull origin main
+```
 
-**BUILD NOW**
+---
 
-![](media/image8.png){width="7.5in" height="4.216666666666667in"}
+# ⚙️ Prerequisites
 
-**As you can see, by clicking BUILD NOW your job will get started..**
+Make sure the following tools are installed:
 
-![](media/image9.png){width="6.135127952755906in"
-height="2.740741469816273in"}
+- Docker
+- Docker Compose
+- Jenkins
+- Ubuntu/Linux Environment
 
-**To visualize the pipeline like above, install Blue ocean plugin from
-manag Jenkins & plugins installation page.**
+---
 
-**Also you can see the pipeline flow from console output to view the
-process**
+# 🚀 Jenkins Setup
 
-**Benefits of viewing console is to know the failure at what point it is
-happened**
+Open Ubuntu terminal and start Jenkins.
 
-![](media/image10.png){width="6.3209886264216975in"
-height="3.553801399825022in"}
+After Jenkins starts, access it in browser:
 
-**Make sure the docker is also running in background if not run the
-command in your terminal as shown below.**
+```text
+http://localhost:8080
+```
 
-![](media/image11.png){width="7.5in" height="4.216666666666667in"}
+<p align="center">
+  <img src="images/jenkins-start.png" width="800">
+</p>
 
-**Without docker running we canot containerize the application of what
-we building**
+---
 
-**After docker run ,check the console for on going process**
+# 🔐 Jenkins Dashboard
 
-**You can see we got a failure in pipeline**
+Login using Jenkins username and password.
 
-**We need to check it in console output for knowing what is the actual
-error is**
+<p align="center">
+  <img src="images/jenkins-dashboard.png" width="800">
+</p>
 
-![](media/image12.png){width="4.024691601049868in"
-height="2.262771216097988in"}**\**
+---
 
-**In console output**
+# 🛠️ Create Jenkins Job
 
-![](media/image13.png){width="7.492521872265967in"
-height="4.975308398950132in"}
+- Click "New Item"
+- Enter Job Name
+- Select "Pipeline"
 
-**It was saying that we did not allowed the Jenkins to access docker**
+<p align="center">
+  <img src="images/create-job.png" width="800">
+</p>
 
-**Solution is in terminal ,run the command :sudo usermode -aG docker
-Jenkins**
+---
 
-**By this we will give the access Jenkins from docker**
+# 🔗 Configure GitHub Repository
 
-![](media/image14.png){width="4.981981627296588in"
-height="2.800980971128609in"}
+- Select:
+  - Pipeline Script from SCM
+  - SCM as Git
+- Add Repository URL
+- Choose main/master branch
 
-**As you can see our Job as successfully done.**
+<p align="center">
+  <img src="images/github-config.png" width="800">
+</p>
 
-**To check the Job done correctly or not we need to check the docker
-containers running and open your application from browser**
+---
 
-![](media/image15.png){width="7.183354111986001in"
-height="3.3456791338582677in"}
+# ▶️ Build Pipeline
 
-**Using docker ps command, you can check the running containers and also
-see at what port your application running**
+Click:
 
-**Mine is localhost://5000. Run this in web browser**
+```text
+BUILD NOW
+```
 
-**you will get final running application like this**
+<p align="center">
+  <img src="images/build-now.png" width="800">
+</p>
 
-![](media/image16.png){width="5.506173447069116in"
-height="3.095693350831146in"}
+---
 
-![](media/image17.png){width="7.169354768153981in"
-height="3.5315321522309713in"}
+# 📊 Blue Ocean Visualization
 
-**Click on this link for step by step process from an end to end picture
-flow:**
+Install the Blue Ocean plugin to visualize pipeline stages.
 
-**Check the YOUTUBE VIDEO for clear explanation:**
+<p align="center">
+  <img src="images/blueocean.png" width="800">
+</p>
 
-**Future Scope:**
+---
 
-**This project can be enhanced by migrating from Docker Compose to
-Kubernetes for better scalability, load balancing, auto-scaling, and
-self-healing capabilities. Kubernetes will help manage the application
-more efficiently in production environments.**
+# 📜 Console Output
 
-**For monitoring, Prometheus can be used to collect real-time metrics
-like CPU, memory, and request performance, while Grafana can visualize
-these metrics through dashboards for better system insights.**
+Console output helps identify build failures and errors.
 
-**These improvements will make the application more scalable, reliable,
-and suitable for cloud-native production deployment.**
+<p align="center">
+  <img src="images/console-output.png" width="800">
+</p>
 
-**Contact**
+---
 
-**I am actively seeking opportunities to apply my skills in DevOps &
-realated fields .\
-If you find my project interesting, I would be grateful for an
-opportunity to contribute and prove my abilities in a professional
-environment.**
+# 🐳 Docker Permission Fix
 
-**You can reach me at:\
-Email: chandusaigari6@gmail.com\
-Phone: +91-7396618269**
+If Jenkins cannot access Docker:
+
+```bash
+sudo usermod -aG docker jenkins
+```
+
+Restart Jenkins after executing the command.
+
+---
+
+# 📦 Running Containers
+
+Check active containers:
+
+```bash
+docker ps
+```
+
+<p align="center">
+  <img src="images/docker-ps.png" width="800">
+</p>
+
+---
+
+# 🌐 Access Application
+
+Open browser:
+
+```text
+http://localhost:5000
+```
+
+<p align="center">
+  <img src="images/application.png" width="800">
+</p>
+
+---
+
+# 📈 Future Scope
+
+## ☸️ Kubernetes Integration
+
+This project can be enhanced using Kubernetes for:
+
+- Auto Scaling
+- Load Balancing
+- Self Healing
+- Production-grade Orchestration
+
+---
+
+## 📊 Monitoring Stack
+
+Future monitoring implementation includes:
+
+- Prometheus for Metrics Collection
+- Grafana for Dashboard Visualization
+
+These tools will improve:
+- Performance Monitoring
+- Resource Tracking
+- System Observability
+
+---
+
+# 🎯 Conclusion
+
+This project provided hands-on experience in:
+
+- Full Stack Development
+- CI/CD Pipeline Automation
+- Docker Containerization
+- Jenkins Integration
+- DevOps Deployment Practices
+
+It helped in understanding real-world software deployment workflows and production-level automation processes.
+
+---
+
+# 📬 Contact
+
+I am actively seeking opportunities in DevOps and related fields.
+
+If you find this project interesting, I would be grateful for an opportunity to contribute and prove my skills in a professional environment.
+
+## 📧 Reach Me
+
+- Email: chandusaigari6@gmail.com
+- Phone: +91-7396618269
+
+---
+
+# 🤝 Contribution
+
+Pull requests are welcome.
+
+---
+
+# 📜 License
+
+MIT License
